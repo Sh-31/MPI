@@ -1,0 +1,10 @@
+^D:\REPO\MPI\BUILD\CMAKEFILES\F8919C37DD2894DDBCDFA1324A9E790E\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Repo/MPI -BD:/Repo/MPI/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Repo/MPI/build/main.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

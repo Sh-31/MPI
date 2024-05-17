@@ -1,0 +1,29 @@
+mkdir build
+
+cmake -B .\build\
+
+cmake --build .\build\
+
+.\build\Debug\main.exe 
+
+mpiexec -n 2 .\build\Debug\main.exe > output.log 2>&1
+
+Image_blurring: mpiexec -n 2 .\build\Debug\main.exe 1 2.jpeg 3 > output.log 2>&1
+EdageDigtion:   mpiexec -n 2 .\build\Debug\main.exe 2 2.jpeg > output.log 2>&1
+ImageSharping:  mpiexec -n 2 .\build\Debug\main.exe 3 2.jpeg > output.log 2>&1
+
+ImageRotation (Color space):       mpiexec -n 3 .\build\Debug\main.exe 4 2.jpeg 90 0 > output.log 2>&1
+              (Transformtion):     mpiexec -n 2 .\build\Debug\main.exe 4 2.jpeg 90 1 > output.log 2>&1
+
+Image Scaling:                     mpiexec -n 4 .\build\Debug\main.exe 5 2.jpeg  > output.log 2>&1
+Histogram Equalization:            mpiexec -n 4 .\build\Debug\main.exe 6 2.jpeg  > output.log 2>&1
+Image Color Space:                 mpiexec -n 2 .\build\Debug\main.exe 7 2.jpeg 6 > output.log 2>&1
+Global Thresholding:               mpiexec -n 2 .\build\Debug\main.exe 8 1.png  > output.log 2>&1
+Local Thresholding:                mpiexec -n 2 .\build\Debug\main.exe 9 1.png  > output.log 2>&1 
+Image Compression:                 mpiexec -n 6 .\build\Debug\main.exe 10 1.png 2 > output.log 2>&1  
+Median:                            mpiexec -n 8 .\build\Debug\main.exe 11 madian.jpg  > output.log 2>&1
+Image Summation:                   mpiexec -n 4 .\build\Debug\main.exe 12 sum1.png sum2.png  > output.log 2>&1
+Adjust Image Brightness:           mpiexec -n 6 .\build\Debug\main.exe 13 1.png 2 > output.log 2>&1 
+Image Contrast:                    mpiexec -n 3 .\build\Debug\main.exe 14 1.png 100 128 > output.log 2>&1 
+Hisgtram Matching:                 mpiexec -n 10 .\build\Debug\main.exe 15 s1.png t1.png > output.log 2>&1  
+
