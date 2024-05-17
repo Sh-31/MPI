@@ -1,4 +1,4 @@
-# Parallel Computing:
+# Parallel Computing Resources (for the project):
 
    * Installation :
       - vscode : https://www.youtube.com/watch?v=bkfCrj-rBjU&t=1s
